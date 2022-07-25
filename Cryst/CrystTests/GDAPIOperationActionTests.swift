@@ -37,10 +37,24 @@ class GDAPIOperationActionTests: XCTestCase {
     
     func testGet() throws {
         let expectation = XCTestExpectation(description: "Get Request")
-        let operation = try GDAPIOperationAction(GDConst.baseURLString, method: .get)
+        let operation = try GDAPIOperationAction(GDConst.listURLString, method: .get)
         operation.main(sessionHandler: self.sessionHandler!) { data, error, cancelled in
             XCTAssert(data != nil)
             expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10)
+    }
+    
+    func testDataDecoder() throws {
+        let expectation = XCTestExpectation(description: "testDataDecoder")
+        let operation = try GDAPIOperationAction(GDConst.listURLString, method: .get)
+        operation.main(sessionHandler: self.sessionHandler!) { data, error, cancelled in
+            XCTAssert(data != nil)
+            expectation.fulfill()
+            let decoder = GDGenericDataDecoder()
+            let list = decoder.decode(data: data!, classType: [CLListItem].self)
+            XCTAssert(list != nil)
+            XCTAssert(list!.count > 0)
         }
         wait(for: [expectation], timeout: 10)
     }

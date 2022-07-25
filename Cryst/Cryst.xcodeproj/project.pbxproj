@@ -29,6 +29,9 @@
 		BE884BF1288F136100008AB9 /* CLListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BF0288F136100008AB9 /* CLListItem.swift */; };
 		BE884BF6288F2A0000008AB9 /* GDOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BF4288F2A0000008AB9 /* GDOperationTest.swift */; };
 		BE884BF7288F2A0000008AB9 /* GDAPIOperationActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BF5288F2A0000008AB9 /* GDAPIOperationActionTests.swift */; };
+		BE884BF9288F2B3900008AB9 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BF8288F2B3900008AB9 /* MainListView.swift */; };
+		BE884BFB288F2B8000008AB9 /* CoinListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BFA288F2B8000008AB9 /* CoinListItem.swift */; };
+		BE884C00288F338800008AB9 /* CoinListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BFF288F338700008AB9 /* CoinListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		BE884BF0288F136100008AB9 /* CLListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLListItem.swift; sourceTree = "<group>"; };
 		BE884BF4288F2A0000008AB9 /* GDOperationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDOperationTest.swift; sourceTree = "<group>"; };
 		BE884BF5288F2A0000008AB9 /* GDAPIOperationActionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAPIOperationActionTests.swift; sourceTree = "<group>"; };
+		BE884BF8288F2B3900008AB9 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
+		BE884BFA288F2B8000008AB9 /* CoinListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListItem.swift; sourceTree = "<group>"; };
+		BE884BFF288F338700008AB9 /* CoinListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 		BE884BA3288F0FD300008AB9 /* Cryst */ = {
 			isa = PBXGroup;
 			children = (
+				BE884BFE288F336D00008AB9 /* ViewModels */,
 				BE884BF2288F173000008AB9 /* UI */,
 				BE884BEF288F131000008AB9 /* Models */,
 				BE884BE6288F12F800008AB9 /* Handler */,
@@ -232,8 +239,18 @@
 			isa = PBXGroup;
 			children = (
 				BE884BA6288F0FD300008AB9 /* ContentView.swift */,
+				BE884BF8288F2B3900008AB9 /* MainListView.swift */,
+				BE884BFA288F2B8000008AB9 /* CoinListItem.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BE884BFE288F336D00008AB9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BE884BFF288F338700008AB9 /* CoinListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,13 +385,16 @@
 			files = (
 				BE884BDE288F104C00008AB9 /* GDOperationAction.swift in Sources */,
 				BE884BDF288F104C00008AB9 /* GDString.swift in Sources */,
+				BE884BFB288F2B8000008AB9 /* CoinListItem.swift in Sources */,
 				BE884BE1288F104C00008AB9 /* GDConst.swift in Sources */,
 				BE884BEB288F12F800008AB9 /* GDDataDecoder.swift in Sources */,
 				BE884BDD288F104C00008AB9 /* GDOperation.swift in Sources */,
 				BE884BE4288F104C00008AB9 /* GDViewLoader.swift in Sources */,
 				BE884BF1288F136100008AB9 /* CLListItem.swift in Sources */,
 				BE884BDC288F104C00008AB9 /* GDOperationQueueManager.swift in Sources */,
+				BE884C00288F338800008AB9 /* CoinListViewModel.swift in Sources */,
 				BE884BA7288F0FD300008AB9 /* ContentView.swift in Sources */,
+				BE884BF9288F2B3900008AB9 /* MainListView.swift in Sources */,
 				BE884BE3288F104C00008AB9 /* GDLogger.swift in Sources */,
 				BE884BEE288F12F800008AB9 /* GDLoader.swift in Sources */,
 				BE884BE0288F104C00008AB9 /* GDError.swift in Sources */,

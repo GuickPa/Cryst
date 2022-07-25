@@ -10,7 +10,7 @@ import UIKit
 
 class GDConst {
     static let baseURLString = "https://api.coingecko.com/api/v3"
-    static let listURLString = "\(GDConst.baseURLString)/coins/markets?"
+    static let listURLString = "\(GDConst.baseURLString)/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=10&page=1"
     
     // colors
     static let defaultBackgroundColor = UIColor(hexString: "3C3E44")
