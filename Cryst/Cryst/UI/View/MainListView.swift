@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct MainListView: View {
-    @StateObject var listViewModel: CoinListViewModel = CoinListViewModel(loader: GDDataLoader())
+    @StateObject var listViewModel: ListViewModel
     
     var body: some View {
         List(listViewModel.items, id: \.id) {
             item in
-            Text(item.name).padding()
+            CoinListItemView(image: item.image, name: item.name, price: item.current_price)
         }
+        .padding(0)
         .onAppear {
             listViewModel.loadItems()
         }
@@ -24,7 +25,7 @@ struct MainListView: View {
 #if DEBUG
 struct MainListView_Previews: PreviewProvider {
     static var previews: some View {
-        MainListView()
+        MainListView(listViewModel: PreviewListViewModel())
     }
 }
 #endif

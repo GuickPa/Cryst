@@ -30,8 +30,11 @@
 		BE884BF6288F2A0000008AB9 /* GDOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BF4288F2A0000008AB9 /* GDOperationTest.swift */; };
 		BE884BF7288F2A0000008AB9 /* GDAPIOperationActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BF5288F2A0000008AB9 /* GDAPIOperationActionTests.swift */; };
 		BE884BF9288F2B3900008AB9 /* MainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BF8288F2B3900008AB9 /* MainListView.swift */; };
-		BE884BFB288F2B8000008AB9 /* CoinListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BFA288F2B8000008AB9 /* CoinListItem.swift */; };
+		BE884BFB288F2B8000008AB9 /* CoinListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BFA288F2B8000008AB9 /* CoinListItemView.swift */; };
 		BE884C00288F338800008AB9 /* CoinListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE884BFF288F338700008AB9 /* CoinListViewModel.swift */; };
+		BEFFD011288FA7B70089AD17 /* PreviewListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFD010288FA7B70089AD17 /* PreviewListViewModel.swift */; };
+		BEFFD013288FB0860089AD17 /* RemoteImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFD012288FB0860089AD17 /* RemoteImageViewModel.swift */; };
+		BEFFD015288FB3170089AD17 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFD014288FB3170089AD17 /* RemoteImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +81,11 @@
 		BE884BF4288F2A0000008AB9 /* GDOperationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDOperationTest.swift; sourceTree = "<group>"; };
 		BE884BF5288F2A0000008AB9 /* GDAPIOperationActionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDAPIOperationActionTests.swift; sourceTree = "<group>"; };
 		BE884BF8288F2B3900008AB9 /* MainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListView.swift; sourceTree = "<group>"; };
-		BE884BFA288F2B8000008AB9 /* CoinListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListItem.swift; sourceTree = "<group>"; };
+		BE884BFA288F2B8000008AB9 /* CoinListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListItemView.swift; sourceTree = "<group>"; };
 		BE884BFF288F338700008AB9 /* CoinListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewModel.swift; sourceTree = "<group>"; };
+		BEFFD010288FA7B70089AD17 /* PreviewListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewListViewModel.swift; sourceTree = "<group>"; };
+		BEFFD012288FB0860089AD17 /* RemoteImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageViewModel.swift; sourceTree = "<group>"; };
+		BEFFD014288FB3170089AD17 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,7 +246,8 @@
 			children = (
 				BE884BA6288F0FD300008AB9 /* ContentView.swift */,
 				BE884BF8288F2B3900008AB9 /* MainListView.swift */,
-				BE884BFA288F2B8000008AB9 /* CoinListItem.swift */,
+				BE884BFA288F2B8000008AB9 /* CoinListItemView.swift */,
+				BEFFD014288FB3170089AD17 /* RemoteImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				BE884BFF288F338700008AB9 /* CoinListViewModel.swift */,
+				BEFFD010288FA7B70089AD17 /* PreviewListViewModel.swift */,
+				BEFFD012288FB0860089AD17 /* RemoteImageViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -385,7 +394,8 @@
 			files = (
 				BE884BDE288F104C00008AB9 /* GDOperationAction.swift in Sources */,
 				BE884BDF288F104C00008AB9 /* GDString.swift in Sources */,
-				BE884BFB288F2B8000008AB9 /* CoinListItem.swift in Sources */,
+				BEFFD011288FA7B70089AD17 /* PreviewListViewModel.swift in Sources */,
+				BE884BFB288F2B8000008AB9 /* CoinListItemView.swift in Sources */,
 				BE884BE1288F104C00008AB9 /* GDConst.swift in Sources */,
 				BE884BEB288F12F800008AB9 /* GDDataDecoder.swift in Sources */,
 				BE884BDD288F104C00008AB9 /* GDOperation.swift in Sources */,
@@ -395,9 +405,11 @@
 				BE884C00288F338800008AB9 /* CoinListViewModel.swift in Sources */,
 				BE884BA7288F0FD300008AB9 /* ContentView.swift in Sources */,
 				BE884BF9288F2B3900008AB9 /* MainListView.swift in Sources */,
+				BEFFD015288FB3170089AD17 /* RemoteImageView.swift in Sources */,
 				BE884BE3288F104C00008AB9 /* GDLogger.swift in Sources */,
 				BE884BEE288F12F800008AB9 /* GDLoader.swift in Sources */,
 				BE884BE0288F104C00008AB9 /* GDError.swift in Sources */,
+				BEFFD013288FB0860089AD17 /* RemoteImageViewModel.swift in Sources */,
 				BE884BE5288F104C00008AB9 /* GDSession.swift in Sources */,
 				BE884BA5288F0FD300008AB9 /* CrystApp.swift in Sources */,
 				BE884BE2288F104C00008AB9 /* GDColor.swift in Sources */,
@@ -569,6 +581,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -578,7 +591,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -598,6 +611,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,7 +621,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
