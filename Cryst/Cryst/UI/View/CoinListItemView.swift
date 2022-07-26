@@ -18,7 +18,6 @@ struct CoinListItemView: View {
             VStack(alignment: .leading) {
                 Text(name)
                 Text(String(format: "%.2f €", price))
-                    
                 
             }
         }

@@ -18,6 +18,10 @@ struct RemoteImageView: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 64, height: 64, alignment: .center)
             .clipShape(Circle())
+            .overlay(
+                RoundedRectangle(cornerRadius: 32)
+                    .stroke(.gray, lineWidth: 3)
+            )
             .onAppear {
                 remoteImageViewModel.loadImage(url: imageURL)
             }

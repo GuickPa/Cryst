@@ -11,6 +11,7 @@ struct ContentView: View {
     var body: some View {
         MainListView(listViewModel: CoinListViewModel(loader: GDDataLoader()))
     }
+        
 }
 
 #if DEBUG
