@@ -14,14 +14,14 @@ struct CoinDescriptionView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .trailing, spacing: 0) {
-                Text(coinViewModel.item.description["en"] ?? "no description")
-                    .onAppear {
-                        coinViewModel.loadItem(itemId: coinId)
-                    }
+                Text(coinViewModel.item.description["en"]?.stripTags() ?? "no description")
                     .font(.system(size: 16))
                     .lineLimit(nil)
             }
             .padding(8)
+        }
+        .onAppear {
+            coinViewModel.loadItem(itemId: coinId)
         }
     }
 }

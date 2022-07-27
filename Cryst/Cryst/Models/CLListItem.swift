@@ -27,7 +27,7 @@ struct CLItem: Codable {
     var id: String
     var symbol: String
     var name: String
-    var hashing_algorithm: String
+    var hashing_algorithm: String?
     var block_time_in_minutes: Double
     var categories: [String]
     var description: [String: String]

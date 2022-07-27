@@ -16,11 +16,15 @@ struct CoinDetailsView: View {
                 .tabItem {
                     Label("Menu", systemImage: "list.dash")
                 }
+                .navigationBarHidden(true)
+                .navigationBarTitle("")
 
             CoinDescriptionView(coinId: coinId)
                 .tabItem {
                     Label("Order", systemImage: "square.and.pencil")
                 }
+                .navigationBarHidden(true)
+                .navigationBarTitle("")
         }
     }
 }

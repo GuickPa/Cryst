@@ -23,7 +23,7 @@ struct MainListView: View {
             .onAppear {
                 listViewModel.loadItems()
             }
-            .navigationTitle("")
+            .navigationBarTitle("Title", displayMode: .inline)
         }
     }
 }

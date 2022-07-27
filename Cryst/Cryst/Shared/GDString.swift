@@ -11,4 +11,8 @@ extension String {
     func lastPathComponent() -> String {
         return URL(string: self)?.lastPathComponent ?? ""
     }
+    
+    func stripTags() -> String {
+        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    }
 }
