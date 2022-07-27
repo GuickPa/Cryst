@@ -14,7 +14,7 @@ struct CoinDescriptionView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .trailing, spacing: 0) {
-                Text(coinViewModel.item.description["en"]?.stripTags() ?? "no description")
+                Text(coinViewModel.itemDescription)
                     .font(.system(size: 16))
                     .lineLimit(nil)
             }

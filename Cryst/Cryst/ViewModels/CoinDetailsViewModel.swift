@@ -11,6 +11,12 @@ class DetailsViewModel: ObservableObject {
     @Published var item: CLItem = CLItem.empty()
     @Published var loading: Bool = false
     
+    var itemDescription: String {
+        get {
+            return self.item.description["en"]?.stripTags() ?? "no description"
+        }
+    }
+    
     func loadItem(itemId: String) {
         
     }
