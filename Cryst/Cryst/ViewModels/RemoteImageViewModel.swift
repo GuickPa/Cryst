@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class RemoteImageViewModel: ObservableObject {
-    @Published var image: UIImage = UIImage(named: GDConst.listItemImagePlaceholder)!
+    @Published var image: UIImage = UIImage()
     @Published var loading: Bool = false
     
     private var loader:GDLoader
@@ -45,7 +45,7 @@ extension RemoteImageViewModel {
     }
     
     private func loadDefault() {
-        self.image = UIImage(named: GDConst.listItemImagePlaceholder)!
+        self.image = UIImage()
     }
 }
 

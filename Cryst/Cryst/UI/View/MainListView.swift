@@ -11,13 +11,20 @@ struct MainListView: View {
     @StateObject var listViewModel: ListViewModel
     
     var body: some View {
-        List(listViewModel.items, id: \.id) {
-            item in
-            CoinListItemView(image: item.image, name: item.name, price: item.current_price)
-        }
-        .padding(0)
-        .onAppear {
-            listViewModel.loadItems()
+        NavigationView {
+            List(listViewModel.items, id: \.id) {
+                item in
+                NavigationLink {
+                    CoinDetailsView()
+                } label: {
+                    CoinListItemView(image: item.image, name: item.name, price: item.current_price)
+                }
+            }
+            .padding(0)
+            .onAppear {
+                listViewModel.loadItems()
+            }
+            .navigationTitle("")
         }
     }
 }
