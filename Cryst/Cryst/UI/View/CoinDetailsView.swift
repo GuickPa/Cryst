@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct CoinDetailsView: View {
+    var coinId: String
     
     var body: some View {
         TabView {
-            CoinDescriptionView()
+            CoinDescriptionView(coinId: coinId)
                 .tabItem {
                     Label("Menu", systemImage: "list.dash")
                 }
 
-            CoinDescriptionView()
+            CoinDescriptionView(coinId: coinId)
                 .tabItem {
                     Label("Order", systemImage: "square.and.pencil")
                 }
@@ -26,6 +27,6 @@ struct CoinDetailsView: View {
 
 struct CoinDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinDetailsView()
+        CoinDetailsView(coinId: GDConst.defaultCoinId)
     }
 }

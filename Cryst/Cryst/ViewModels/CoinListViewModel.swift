@@ -40,7 +40,9 @@ extension CoinListViewModel {
     }
     
     private func onLoadingError(error: Error?) {
-        self.loading = false
+        DispatchQueue.main.async {
+            self.loading = false
+        }
     }
 }
 

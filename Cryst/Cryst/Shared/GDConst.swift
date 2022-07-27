@@ -11,6 +11,9 @@ import UIKit
 class GDConst {
     static let baseURLString = "https://api.coingecko.com/api/v3"
     static let listURLString = "\(GDConst.baseURLString)/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=10&page=1"
+    static let detailsURLString = "\(GDConst.baseURLString)/coins/%@"
+    
+    static let defaultDateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     
     // colors
     static let defaultBackgroundColor = UIColor(hexString: "A5C4D4")
@@ -20,8 +23,15 @@ class GDConst {
     
     // placeholders
     static let listItemImagePlaceholder = "cryptoPlaceholder"
+    static let defaultCoinId = "bitcoin"
     
     static func localizedString (_ title: String) -> String {
       return NSLocalizedString(title, comment: "")
+    }
+    
+    static func formatDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = GDConst.defaultDateFormat
+        return dateFormatter.string(from: date)
     }
 }

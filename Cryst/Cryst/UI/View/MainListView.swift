@@ -15,12 +15,11 @@ struct MainListView: View {
             List(listViewModel.items, id: \.id) {
                 item in
                 NavigationLink {
-                    CoinDetailsView()
+                    CoinDetailsView(coinId: item.id)
                 } label: {
                     CoinListItemView(image: item.image, name: item.name, price: item.current_price)
                 }
             }
-            .padding(0)
             .onAppear {
                 listViewModel.loadItems()
             }
