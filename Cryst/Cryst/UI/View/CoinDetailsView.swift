@@ -12,14 +12,14 @@ struct CoinDetailsView: View {
     
     var body: some View {
         TabView {
-            CoinDescriptionView(coinId: coinId)
+            CoinDescriptionView(coinViewModel: CoinDetailsViewModel(loader: GDDataLoader()), coinId: coinId)
                 .tabItem {
                     Label("Menu", systemImage: "list.dash")
                 }
                 .navigationBarHidden(true)
                 .navigationBarTitle("")
 
-            CoinDescriptionView(coinId: coinId)
+            CoinPriceChartView(chartViewModel: CoinPriceChartViewModel(loader: GDDataLoader()), coinId: coinId)
                 .tabItem {
                     Label("Order", systemImage: "square.and.pencil")
                 }
@@ -29,8 +29,10 @@ struct CoinDetailsView: View {
     }
 }
 
+#if DEBUG
 struct CoinDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         CoinDetailsView(coinId: GDConst.defaultCoinId)
     }
 }
+#endif

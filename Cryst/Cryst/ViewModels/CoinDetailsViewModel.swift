@@ -32,8 +32,8 @@ class CoinDetailsViewModel: DetailsViewModel {
     }
     
     override func loadItem(itemId: String) {
-        let string = String(format: GDConst.detailsURLString, itemId)
-        self.loader.load(urlString: string, handler: GDOperationQueueManager.instance)
+        let urlString = String(format: GDConst.detailsURLString, itemId)
+        self.loader.load(urlString: urlString, handler: GDOperationQueueManager.instance)
         self.loading = true
     }
 }

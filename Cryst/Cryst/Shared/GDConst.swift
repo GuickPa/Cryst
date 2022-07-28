@@ -12,6 +12,7 @@ class GDConst {
     static let baseURLString = "https://api.coingecko.com/api/v3"
     static let listURLString = "\(GDConst.baseURLString)/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=10&page=1"
     static let detailsURLString = "\(GDConst.baseURLString)/coins/%@"
+    static let marketChartURLString = "\(GDConst.baseURLString)/coins/%@/market_chart?vs_currency=eur&days=7&interval=daily"
     
     static let defaultDateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     
@@ -33,5 +34,9 @@ class GDConst {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = GDConst.defaultDateFormat
         return dateFormatter.string(from: date)
+    }
+    
+    static func formatPrice(price: Double) -> String {
+        return String(format: "%.2f €", price)
     }
 }

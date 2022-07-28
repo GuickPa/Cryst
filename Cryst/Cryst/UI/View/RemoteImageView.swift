@@ -28,8 +28,10 @@ struct RemoteImageView: View {
     }
 }
 
+#if DEBUG
 struct RemoteImageView_Previews: PreviewProvider {
     static var previews: some View {
         RemoteImageView(imageURL: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579")
     }
 }
+#endif

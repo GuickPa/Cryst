@@ -17,7 +17,7 @@ struct CoinListItemView: View {
             RemoteImageView(imageURL: image)
             VStack(alignment: .leading) {
                 Text(name)
-                Text(String(format: "%.2f €", price))
+                Text(GDConst.formatPrice(price: price))
                 
             }
         }

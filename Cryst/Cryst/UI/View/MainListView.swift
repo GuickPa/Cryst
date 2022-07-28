@@ -25,6 +25,7 @@ struct MainListView: View {
             }
             .navigationBarTitle("Title", displayMode: .inline)
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

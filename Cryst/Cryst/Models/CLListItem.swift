@@ -47,3 +47,11 @@ struct CLItem: Codable {
             last_updated: GDConst.formatDate(date: Date()))
     }
 }
+
+struct CLItemMarketChart: Codable {
+    var prices: [[Double]]
+    
+    static func empty() -> CLItemMarketChart {
+        return CLItemMarketChart(prices: [])
+    }
+}
