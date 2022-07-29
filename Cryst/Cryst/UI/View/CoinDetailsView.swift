@@ -14,13 +14,13 @@ struct CoinDetailsView: View {
         TabView {
             CoinDescriptionView(coinViewModel: CoinDescriptionViewModel(loader: GDDataLoader()), coinId: coinId)
                 .tabItem {
-                    Label("Menu", systemImage: "list.dash")
+                    Label(GDConst.localizedString("details_tab_view_title"), systemImage: "list.dash")
                 }
                 .navigationBarTitle("")
 
             CoinPriceChartView(chartViewModel: CoinPriceChartViewModel(loader: GDDataLoader()), coinId: coinId)
                 .tabItem {
-                    Label("Order", systemImage: "square.and.pencil")
+                    Label(GDConst.localizedString("price_chart_tab_view_title"), systemImage: "square.and.pencil")
                 }
                 .navigationBarTitle("")
         }

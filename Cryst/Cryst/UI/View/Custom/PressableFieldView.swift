@@ -16,9 +16,14 @@ struct PressableFieldView: View {
         HStack(alignment: .center, spacing: 8) {
             TitleText(text: title)
             ContentText(text: content)
-                .onTapGesture {
-                    action()
-                }
+                .foregroundColor(.blue)
+            Image(systemName: "link")
+                .resizable()
+                .frame(width: 14, height: 14)
+                .aspectRatio(contentMode: .fill)
+        }
+        .onTapGesture {
+            action()
         }
     }
 }

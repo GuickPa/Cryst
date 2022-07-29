@@ -16,6 +16,10 @@
 // generic messages
 "gd_message_unknown" = "Unknown";
 
+// views
+"details_tab_view_title" = "Details";
+"price_chart_tab_view_title" = "Price Chart";
+
 // labels
 "coin_description_name" = "Name";
 "coin_description_symbol" = "Symbol";

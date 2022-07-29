@@ -19,6 +19,9 @@ class GDConst {
     static let defaultLanguage = "en"
     static let defaultLink = "homepage"
     
+    // helper values
+    static let appTitle:String = Bundle.main.infoDictionary!["CFBundleName"] as! String
+    
     // generic values
     static let defaultTitleFontSize: CGFloat = 11
     static let defaultContentFontSize: CGFloat = 11

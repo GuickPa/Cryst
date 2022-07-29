@@ -23,7 +23,7 @@ struct MainListView: View {
             .onAppear {
                 listViewModel.loadItems()
             }
-            .navigationBarTitle("Title", displayMode: .inline)
+            .navigationBarTitle(GDConst.appTitle, displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
