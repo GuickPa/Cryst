@@ -37,6 +37,9 @@ class GDConst {
     }
     
     static func formatPrice(price: Double) -> String {
-        return String(format: "%.2f €", price)
+        if price > 10.0 {
+            return String(format: "%.2f €", price)
+        }
+        return String(format: "%.4f €", price)
     }
 }

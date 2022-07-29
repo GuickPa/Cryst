@@ -9,8 +9,10 @@ import Foundation
 import SwiftUI
 
 struct ChartNormalizedValue: Hashable {
-    var normalizedValue: Double
-    var originalValue: Double
+    var index: Int
+    var value: Double
+    var x: CGFloat
+    var y: CGFloat
 }
 
 class ChartViewModel: ObservableObject {
@@ -26,15 +28,32 @@ class ChartViewModel: ObservableObject {
     // Normalizes values on maximum value in list
     func normalizeValues () {
         // get the maximum value
-        if self.item.prices.count > 0, let maxItem = self.item.prices.max(by: { $0[1] < $1[1] }) {
+        if self.item.prices.count > 0, let maxItem = self.item.prices.max(by: { $0[1] < $1[1] }), let minItem = self.item.prices.min(by: { $0[1] < $1[1] }) {
             let max = maxItem[1]
+            let min = minItem[1]
+            let delta = max - min
+            let count:CGFloat = CGFloat(self.item.prices.count - 1)
             // reset normalized value
             self.normalizedValues = []
             // save list with each value on max value
-            for item in self.item.prices {
-                print("original value is \(item)")
-                self.normalizedValues.append(ChartNormalizedValue(normalizedValue: item[1]/max, originalValue: item[1]))
+            for (index, item) in self.item.prices.enumerated() {
+                let y = ((item[1] - min) / delta) + 0.1
+                self.normalizedValues.append(
+                    ChartNormalizedValue(
+                        index: index,
+                        value: item[1],
+                        x: CGFloat(index)/count,
+                        y: y
+                    )
+                )
             }
+            // closing point
+            self.normalizedValues.append(ChartNormalizedValue(
+                index: -1,
+                value: 0,
+                x: 1,
+                y: 0
+            ))
         }
     }
 }

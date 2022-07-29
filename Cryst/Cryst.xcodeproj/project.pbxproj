@@ -34,6 +34,8 @@
 		BEB9D9D228905D3E006E8404 /* CoinDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB9D9D128905D3E006E8404 /* CoinDetailsViewModel.swift */; };
 		BEC0F1922891D90B0087D5EE /* CoinPriceChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0F1912891D90B0087D5EE /* CoinPriceChartView.swift */; };
 		BEC0F1942891D9350087D5EE /* CoinPriceChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0F1932891D9350087D5EE /* CoinPriceChartViewModel.swift */; };
+		BEC58913289422D200C77B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB9D9CB2890471B006E8404 /* Assets.xcassets */; };
+		BEC58914289422D200C77B96 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB9D9CD289059CA006E8404 /* Preview Assets.xcassets */; };
 		BEF9FD7928903EC6004AAE8B /* CoinDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF9FD7828903EC6004AAE8B /* CoinDetailsView.swift */; };
 		BEFFD011288FA7B70089AD17 /* PreviewListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFD010288FA7B70089AD17 /* PreviewListViewModel.swift */; };
 		BEFFD013288FB0860089AD17 /* RemoteImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFD012288FB0860089AD17 /* RemoteImageViewModel.swift */; };
@@ -379,6 +381,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC58913289422D200C77B96 /* Assets.xcassets in Resources */,
+				BEC58914289422D200C77B96 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,7 @@ struct CoinDescriptionView: View {
         ScrollView {
             VStack(alignment: .trailing, spacing: 0) {
                 Text(coinViewModel.itemDescription)
-                    .font(.system(size: 16))
+                    .font(.system(size: 11))
                     .lineLimit(nil)
             }
             .padding(8)

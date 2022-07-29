@@ -12,26 +12,42 @@ struct CoinPriceChartView: View {
     var coinId: String
     
     var body: some View {
-        HStack {
-            ForEach(chartViewModel.normalizedValues, id: \.self) { value in
-                GeometryReader { geometry in
-                    VStack {
-                        Spacer()
-                        ZStack {
-                        Rectangle()
-                            .fill(Color.blue)
-                            .frame(width: 20, height: CGFloat(value.normalizedValue) * geometry.size.height * 0.5)
-                            Text(GDConst.formatPrice(price: value.originalValue))
-                            .font(.system(size: 11))
-                            .rotationEffect(.degrees(-90))
-                            .offset(y: 35)
-                            .lineLimit(1)
+        VStack {
+            VStack {
+                Text("Last 7 days prices")
+                Spacer()
+            }
+            GeometryReader { geometry in
+                ZStack {
+                    let path = Path {
+                        path in
+                        path.move(to: CGPoint(x:0, y:geometry.size.height))
+                        for value in chartViewModel.normalizedValues {
+                            path.addLine(to: CGPoint(
+                                x: value.x * geometry.size.width,
+                                y: geometry.size.height - (value.y * geometry.size.height)
+                            ))
                         }
+                        path.closeSubpath()
+                    }
+                    path.fill(LinearGradient(gradient: Gradient(colors: [.blue, .green]),
+                                             startPoint: .top,
+                                             endPoint: .bottom))
+                }
+                ForEach(chartViewModel.normalizedValues, id: \.self) { value in
+                    if value.index >= 0 {
+                        Text(GDConst.formatPrice(price: value.value))
+                            .position(x: value.x * geometry.size.width,
+                                      y: geometry.size.height - (value.y * geometry.size.height)
+                            )
+                            .font(.system(size: 9))
+                            .lineLimit(1)
                     }
                 }
             }
+            
         }
-        .padding(8)
+        .padding(16)
         .onAppear {
             chartViewModel.loadItem(itemId: coinId)
         }
@@ -48,6 +64,7 @@ class DebugCharViewModel: ChartViewModel {
             [40000, 40000],
             [20000, 20000],
             [30000, 30000],
+            [20000, 20000],
             [50000, 50000]
         ])
         self.normalizeValues()
