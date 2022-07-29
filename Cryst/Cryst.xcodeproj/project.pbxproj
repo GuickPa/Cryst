@@ -42,7 +42,6 @@
 		BEC5891F28942D8100C77B96 /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5891E28942D8100C77B96 /* FieldView.swift */; };
 		BEC58921289434BD00C77B96 /* PressableFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC58920289434BD00C77B96 /* PressableFieldView.swift */; };
 		BEF9FD7928903EC6004AAE8B /* CoinDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF9FD7828903EC6004AAE8B /* CoinDetailsView.swift */; };
-		BEFFD011288FA7B70089AD17 /* PreviewListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFD010288FA7B70089AD17 /* PreviewListViewModel.swift */; };
 		BEFFD013288FB0860089AD17 /* RemoteImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFD012288FB0860089AD17 /* RemoteImageViewModel.swift */; };
 		BEFFD015288FB3170089AD17 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFFD014288FB3170089AD17 /* RemoteImageView.swift */; };
 /* End PBXBuildFile section */
@@ -103,7 +102,6 @@
 		BEC5891E28942D8100C77B96 /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		BEC58920289434BD00C77B96 /* PressableFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableFieldView.swift; sourceTree = "<group>"; };
 		BEF9FD7828903EC6004AAE8B /* CoinDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsView.swift; sourceTree = "<group>"; };
-		BEFFD010288FA7B70089AD17 /* PreviewListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewListViewModel.swift; sourceTree = "<group>"; };
 		BEFFD012288FB0860089AD17 /* RemoteImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageViewModel.swift; sourceTree = "<group>"; };
 		BEFFD014288FB3170089AD17 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -280,7 +278,6 @@
 			isa = PBXGroup;
 			children = (
 				BE884BFF288F338700008AB9 /* CoinListViewModel.swift */,
-				BEFFD010288FA7B70089AD17 /* PreviewListViewModel.swift */,
 				BEFFD012288FB0860089AD17 /* RemoteImageViewModel.swift */,
 				BEB9D9D128905D3E006E8404 /* CoinDescriptionViewModel.swift */,
 				BEC0F1932891D9350087D5EE /* CoinPriceChartViewModel.swift */,
@@ -435,7 +432,6 @@
 				BE884BDF288F104C00008AB9 /* GDString.swift in Sources */,
 				BEC0F1942891D9350087D5EE /* CoinPriceChartViewModel.swift in Sources */,
 				BEB9D9D028905CD6006E8404 /* CoinDescriptionView.swift in Sources */,
-				BEFFD011288FA7B70089AD17 /* PreviewListViewModel.swift in Sources */,
 				BEC58921289434BD00C77B96 /* PressableFieldView.swift in Sources */,
 				BE884BFB288F2B8000008AB9 /* CoinListItemView.swift in Sources */,
 				BE884BE1288F104C00008AB9 /* GDConst.swift in Sources */,
