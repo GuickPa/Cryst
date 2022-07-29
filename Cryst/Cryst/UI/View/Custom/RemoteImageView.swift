@@ -9,7 +9,6 @@ import SwiftUI
 
 struct RemoteImageView: View {
     @StateObject var remoteImageViewModel: RemoteImageViewModel = RemoteImageViewModel(loader: GDDataLoader())
-    
     var imageURL: String
     
     var body: some View {

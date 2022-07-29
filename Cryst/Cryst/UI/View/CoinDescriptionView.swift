@@ -36,7 +36,12 @@ struct CoinDescriptionView: View {
                             })
                     }
                     Spacer()
-                    RemoteImageView(imageURL: coinViewModel.itemImage)
+                    // TODO: find a better and solid solution for this -> image won't updates after item was loaded
+                    if coinViewModel.itemImage.count > 0 {
+                        RemoteImageView(imageURL: coinViewModel.itemImage)
+                    } else {
+                        RemoteImageView(imageURL: coinViewModel.itemImage)
+                    }
                     Spacer()
                 }
                 Spacer()
