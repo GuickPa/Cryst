@@ -12,7 +12,7 @@ struct CoinDetailsView: View {
     
     var body: some View {
         TabView {
-            CoinDescriptionView(coinViewModel: CoinDetailsViewModel(loader: GDDataLoader()), coinId: coinId)
+            CoinDescriptionView(coinViewModel: CoinDescriptionViewModel(loader: GDDataLoader()), coinId: coinId)
                 .tabItem {
                     Label("Menu", systemImage: "list.dash")
                 }

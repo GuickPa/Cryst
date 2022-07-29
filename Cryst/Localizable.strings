@@ -1,0 +1,29 @@
+/* 
+  Locale.strings
+  Cryst
+
+  Created by Guglielmo Deletis on 29/07/22.
+  
+*/
+// errors
+"gd_error_instance" = "An instance was already init";
+"gd_error_unallowed_method" = "Method not allowed";
+"gd_error_bad_format" = "Bad format";
+"gd_error_aborted" = "Operation aborted";
+"gd_error_title" = "Error";
+"gd_generic_error" = "Unknown error";
+
+// generic messages
+"gd_message_unknown" = "Unknown";
+
+// labels
+"coin_description_name" = "Name";
+"coin_description_symbol" = "Symbol";
+"coin_description_algorithm" = "Algorithm";
+"coin_description_url" = "URL";
+"coin_description_description" = "Description";
+
+// stubs
+"default_title" = "Example title";
+"default_content" = "Example content";
+"default_lorem_ipsum" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus lorem sit amet nunc egestas, sit amet tempus neque varius. Vivamus vel sem semper, ultrices eros pharetra, mattis tortor. Nullam in metus eget nisi scelerisque dignissim quis eget lorem. Aliquam purus tortor, bibendum vitae nisi id, hendrerit laoreet massa. Cras molestie semper turpis. Mauris consequat velit ac orci congue suscipit. Vivamus convallis pretium mauris sit amet lobortis. Quisque scelerisque cursus urna. Sed ultrices interdum nulla, id sodales sem iaculis nec.";

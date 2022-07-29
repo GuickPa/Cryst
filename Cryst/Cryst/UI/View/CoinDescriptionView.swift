@@ -13,12 +13,36 @@ struct CoinDescriptionView: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .trailing, spacing: 0) {
-                Text(coinViewModel.itemDescription)
-                    .font(.system(size: 11))
-                    .lineLimit(nil)
-            }
-            .padding(8)
+            VStack (alignment: .leading) {
+                HStack {
+                    VStack(alignment: .leading, spacing: 8) {
+                        FieldView(
+                            title: GDConst.localizedString("coin_description_name"),
+                            content: coinViewModel.item.name)
+                        
+                        FieldView(
+                            title: GDConst.localizedString("coin_description_symbol"),
+                            content: coinViewModel.item.symbol)
+                        
+                        FieldView(
+                            title: GDConst.localizedString("coin_description_algorithm"),
+                            content: coinViewModel.item.hashing_algorithm)
+                        
+                        PressableFieldView(
+                            title: GDConst.localizedString("coin_description_url"),
+                            content: coinViewModel.itemLink,
+                            action: {
+                                coinViewModel.openCoinLink()
+                            })
+                    }
+                    Spacer()
+                    RemoteImageView(imageURL: coinViewModel.itemImage)
+                    Spacer()
+                }
+                Spacer()
+                TitleText(text: GDConst.localizedString("coin_description_description"))
+                ContentText(text: coinViewModel.itemDescription)
+            }.padding(8)
         }
         .onAppear {
             coinViewModel.loadItem(itemId: coinId)
@@ -27,9 +51,15 @@ struct CoinDescriptionView: View {
 }
 
 #if DEBUG
+class DebugDetailsViewModel: DetailsViewModel {
+    override func loadItem(itemId: String) {
+        self.item = CLItem.defaultItem()
+    }
+}
+
 struct CoinDescriptionView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinDescriptionView(coinViewModel: CoinDetailsViewModel(loader: GDDataLoader()), coinId: GDConst.defaultCoinId)
+        CoinDescriptionView(coinViewModel: DebugDetailsViewModel(), coinId: GDConst.defaultCoinId)
     }
 }
 #endif

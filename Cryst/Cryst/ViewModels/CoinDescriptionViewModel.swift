@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class DetailsViewModel: ObservableObject {
     @Published var item: CLItem = CLItem.empty()
@@ -13,16 +14,37 @@ class DetailsViewModel: ObservableObject {
     
     var itemDescription: String {
         get {
-            return self.item.description["en"]?.stripTags() ?? "no description"
+            return self.item.description[GDConst.defaultLanguage]?.stripTags() ?? "no description"
+        }
+    }
+    
+    var itemImage: String {
+        get {
+            return self.item.image.large
+        }
+    }
+    
+    var itemLink: String? {
+        get {
+            if self.item.links.homepage.count > 0 {
+                return self.item.links.homepage[0]
+            }
+            return nil
         }
     }
     
     func loadItem(itemId: String) {
         
     }
+    
+    func openCoinLink() {
+        if let link = self.itemLink, let url = URL(string: link), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+    }
 }
 
-class CoinDetailsViewModel: DetailsViewModel {
+class CoinDescriptionViewModel: DetailsViewModel {
     private var loader:GDLoader
     
     init(loader:GDLoader) {
@@ -38,8 +60,8 @@ class CoinDetailsViewModel: DetailsViewModel {
     }
 }
 
-extension CoinDetailsViewModel {
-    private func parseList(data:Data) {
+extension CoinDescriptionViewModel {
+    private func parseData(data:Data) {
         DispatchQueue.main.async {
             self.item = GDGenericDataDecoder().decode(data: data, classType: CLItem.self) ?? CLItem.empty()
             self.loading = false
@@ -53,14 +75,14 @@ extension CoinDetailsViewModel {
     }
 }
 
-extension CoinDetailsViewModel: GDLoaderDelegate {
+extension CoinDescriptionViewModel: GDLoaderDelegate {
     func loaderDidStart(_ loader: GDLoader) {
         
     }
     
     func loaderDidLoad(_ loader: GDLoader, data: [Data]?) {
         if let d = data?[0] {
-            self.parseList(data: d)
+            self.parseData(data: d)
         }
     }
     

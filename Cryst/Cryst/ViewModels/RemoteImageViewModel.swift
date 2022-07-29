@@ -20,8 +20,10 @@ class RemoteImageViewModel: ObservableObject {
     }
     
     func loadImage(url:String) {
-        self.loader.load(urlString: url, handler: GDOperationQueueManager.instance)
-        self.loading = true
+        if let _ = URL(string: url) {
+            self.loader.load(urlString: url, handler: GDOperationQueueManager.instance)
+            self.loading = true
+        }
     }
 }
 

@@ -1,0 +1,25 @@
+//
+//  TitleText.swift
+//  Cryst
+//
+//  Created by Guglielmo Deletis on 29/07/22.
+//
+
+import SwiftUI
+
+struct TitleText: View {
+    var text:String?
+    
+    var body: some View {
+        Text(text ?? "")
+            .font(.system(size: GDConst.defaultTitleFontSize).bold())
+    }
+}
+
+#if DEBUG
+struct TitleText_Previews: PreviewProvider {
+    static var previews: some View {
+        TitleText(text: GDConst.defaultTitle)
+    }
+}
+#endif

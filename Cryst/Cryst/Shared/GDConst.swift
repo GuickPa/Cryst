@@ -16,6 +16,13 @@ class GDConst {
     
     static let defaultDateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     
+    static let defaultLanguage = "en"
+    static let defaultLink = "homepage"
+    
+    // generic values
+    static let defaultTitleFontSize: CGFloat = 11
+    static let defaultContentFontSize: CGFloat = 11
+    
     // colors
     static let defaultBackgroundColor = UIColor(hexString: "A5C4D4")
     
@@ -23,8 +30,13 @@ class GDConst {
     static let messageUnknown = GDConst.localizedString("gd_message_unknown")
     
     // placeholders
+    static let emptyString = ""
     static let listItemImagePlaceholder = "cryptoPlaceholder"
     static let defaultCoinId = "bitcoin"
+    static let defaultCoinAlgorithm = "SHA256"
+    static let defaultLoremIpsum = GDConst.localizedString("default_lorem_ipsum")
+    static let defaultTitle = GDConst.localizedString("default_title")
+    static let defaultContent = GDConst.localizedString("default_content")
     
     static func localizedString (_ title: String) -> String {
       return NSLocalizedString(title, comment: "")
