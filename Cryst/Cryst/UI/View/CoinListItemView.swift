@@ -14,7 +14,10 @@ struct CoinListItemView: View {
     
     var body: some View {
         HStack {
-            RemoteImageView(imageURL: image)
+            RemoteImageView(
+                remoteImageViewModel: RemoteImageViewModel(loader: GDDataLoader()),
+                imageURL: image
+            )
             VStack(alignment: .leading) {
                 Text(name)
                 Text(GDConst.formatPrice(price: price))

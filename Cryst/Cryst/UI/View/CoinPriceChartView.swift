@@ -12,42 +12,47 @@ struct CoinPriceChartView: View {
     var coinId: String
     
     var body: some View {
-        VStack {
+        ZStack {
             VStack {
-                Text("Last 7 days prices")
-                Spacer()
-            }
-            GeometryReader { geometry in
-                ZStack {
-                    let path = Path {
-                        path in
-                        path.move(to: CGPoint(x:0, y:geometry.size.height))
-                        for value in chartViewModel.normalizedValues {
-                            path.addLine(to: CGPoint(
-                                x: value.x * geometry.size.width,
-                                y: geometry.size.height - (value.y * geometry.size.height)
-                            ))
+                VStack {
+                    Text("Last 7 days prices")
+                    Spacer()
+                }
+                GeometryReader { geometry in
+                    ZStack {
+                        let path = Path {
+                            path in
+                            path.move(to: CGPoint(x:0, y:geometry.size.height))
+                            for value in chartViewModel.normalizedValues {
+                                path.addLine(to: CGPoint(
+                                    x: value.x * geometry.size.width,
+                                    y: geometry.size.height - (value.y * geometry.size.height)
+                                ))
+                            }
+                            path.closeSubpath()
                         }
-                        path.closeSubpath()
+                        path.fill(LinearGradient(gradient: Gradient(colors: [.blue, .green]),
+                                                 startPoint: .top,
+                                                 endPoint: .bottom))
                     }
-                    path.fill(LinearGradient(gradient: Gradient(colors: [.blue, .green]),
-                                             startPoint: .top,
-                                             endPoint: .bottom))
-                }
-                ForEach(chartViewModel.normalizedValues, id: \.self) { value in
-                    if value.index >= 0 {
-                        Text(GDConst.formatPrice(price: value.value))
-                            .position(x: value.x * geometry.size.width,
-                                      y: geometry.size.height - (value.y * geometry.size.height)
-                            )
-                            .font(.system(size: 9))
-                            .lineLimit(1)
+                    ForEach(chartViewModel.normalizedValues, id: \.self) { value in
+                        if value.index >= 0 {
+                            Text(GDConst.formatPrice(price: value.value))
+                                .position(x: value.x * geometry.size.width,
+                                          y: geometry.size.height - (value.y * geometry.size.height)
+                                )
+                                .font(.system(size: 9))
+                                .lineLimit(1)
+                        }
                     }
                 }
+                
             }
-            
+            .padding(16)
+            if(chartViewModel.loading) {
+                LoadingView()
+            }
         }
-        .padding(16)
         .onAppear {
             chartViewModel.loadItem(itemId: coinId)
         }

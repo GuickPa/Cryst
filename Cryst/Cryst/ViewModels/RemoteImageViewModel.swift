@@ -8,18 +8,25 @@
 import Foundation
 import UIKit
 
-class RemoteImageViewModel: ObservableObject {
+class ImageViewModel: ObservableObject {
     @Published var image: UIImage = UIImage()
     @Published var loading: Bool = false
     
+    func loadImage(url:String) {
+        
+    }
+}
+
+class RemoteImageViewModel: ImageViewModel {
     private var loader:GDLoader
     
     init(loader:GDLoader) {
         self.loader = loader
+        super.init()
         self.loader.delegate = self
     }
     
-    func loadImage(url:String) {
+    override func loadImage(url:String) {
         if let _ = URL(string: url) {
             self.loader.load(urlString: url, handler: GDOperationQueueManager.instance)
             self.loading = true

@@ -34,7 +34,7 @@ class GDConst {
     
     // placeholders
     static let emptyString = ""
-    static let listItemImagePlaceholder = "cryptoPlaceholder"
+    static let listItemImagePlaceholder = "bitcoin"
     static let defaultCoinId = "bitcoin"
     static let defaultCoinAlgorithm = "SHA256"
     static let defaultLoremIpsum = GDConst.localizedString("default_lorem_ipsum")

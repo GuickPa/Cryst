@@ -11,21 +11,27 @@ struct MainListView: View {
     @StateObject var listViewModel: ListViewModel
     
     var body: some View {
-        NavigationView {
-            List(listViewModel.items, id: \.id) {
-                item in
-                NavigationLink {
-                    CoinDetailsView(coinId: item.id)
-                } label: {
-                    CoinListItemView(image: item.image, name: item.name, price: item.current_price)
+        ZStack {
+            NavigationView {
+                List(listViewModel.items, id: \.id) {
+                    item in
+                    NavigationLink {
+                        CoinDetailsView(coinId: item.id)
+                    } label: {
+                        CoinListItemView(image: item.image, name: item.name, price: item.current_price)
+                    }
                 }
+                .onAppear {
+                    listViewModel.loadItems()
+                }
+                .navigationBarTitle(GDConst.appTitle, displayMode: .inline)
             }
-            .onAppear {
-                listViewModel.loadItems()
+            .navigationViewStyle(StackNavigationViewStyle())
+            
+            if(listViewModel.loading) {
+                LoadingView()
             }
-            .navigationBarTitle(GDConst.appTitle, displayMode: .inline)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -33,6 +39,7 @@ struct MainListView: View {
 class PreviewListViewModel: ListViewModel {
     override init() {
         super.init()
+        self.loading = false
         self.items = [
             CLListItem(id: "bitcoin", symbol: "btc", name: "Bitcoin", image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579", current_price: 150),
             CLListItem(id: "ethereum", symbol: "eth", name: "Ethereum", image: "https://assets.coingecko.com/coins/images/279/large/ethereum.png?1595348880", current_price: 50),
