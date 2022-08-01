@@ -1,5 +1,7 @@
 # Cryst
-CRY(pto li)ST app is an iOS app that shows a list of the ten most important crypto coin
+CRY(pto li)ST app is an iOS app that shows a list of the ten most important crypto coins
+
+Tap one from the list and you'll find a details tab screen with some usefull infos and price charts of the last week.
 
 [**GITHUB source**](https://github.com/GuickPa/Cryst)
 
@@ -29,7 +31,7 @@ No PODs or external libraries required.
 
 No terminal commands required.
 
-Just open the Cryst.xcodeproj file inside ./Crist, build & run on iPhone/iPod simulator or device.
+Just open the Cryst.xcodeproj file inside ./Crist folder, build & run on iPhone/iPod simulator or device.
 
 # License
 Nothing is free!
